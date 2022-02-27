@@ -17,11 +17,11 @@ code {
   display: flex;
 }
 
-.contacts-pane {
+.contacts {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 40%;
+  width: 50%;
 }
 
 .contacts-search {
@@ -66,12 +66,6 @@ code {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.selected-contacts {
-  background: #eee;
-  overflow-y: scroll;
-  flex-grow: 1;
 }
 
 button {
