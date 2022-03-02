@@ -28,8 +28,9 @@ class ContactsPage extends React.Component {
   //When reach the bottom of the scroll, get the next 10 contacts from the server
   scrollHandler = (e) => {
     const bottom =
-      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom) {
+      e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight;
+      console.log(bottom)
+      if (bottom < 50) {
       this.setState({ skip: this.state.skip + 10, loading: true }, () => {
         this.searchContacts();
       });
@@ -38,8 +39,8 @@ class ContactsPage extends React.Component {
 
   scrollSelectedHandler = (e) => {
     const bottom =
-      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom && this.state.selectedAll) {
+      e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight;
+    if (bottom < 50 && this.state.selectedAll) {
       this.setState(
         { skipSelected: this.state.skipSelected + 10, loading: true },
         () => {
