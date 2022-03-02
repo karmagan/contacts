@@ -29,8 +29,7 @@ class ContactsPage extends React.Component {
   scrollHandler = (e) => {
     const bottom =
       e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight;
-      console.log(bottom)
-      if (bottom < 50) {
+    if (bottom < 50) {
       this.setState({ skip: this.state.skip + 10, loading: true }, () => {
         this.searchContacts();
       });
